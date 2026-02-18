@@ -9,7 +9,7 @@ A 4-page authentication system built using:
 ## Features
 
 - ✅ Registration (Day 1)
-- ⏳ Login (Coming Day 2)
+- ✅ Login (Day 2)
 - ⏳ Profile Page (Coming Day 3)
 - ⏳ Forgot Password (Coming Day 4)
 
@@ -47,3 +47,15 @@ Server runs on: http://localhost:3000
 - Implemented user registration with bcrypt password hashing
 - Created users table with proper schema
 - Built registration form with validation
+
+## Day 2 Progress
+
+- Created login page with email and password fields
+- Implemented POST /login route with proper validation
+- Added bcrypt password comparison for secure authentication
+- Integrated express-session for session management
+- Created session storage for user data (id, name, email)
+- Added logout functionality
+- Implemented basic profile page (temporary)
+- Added authentication middleware for protected routes
+- Proper error handling for "User not found" and "Invalid credentials"
