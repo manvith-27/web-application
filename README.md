@@ -11,7 +11,7 @@ A 4-page authentication system built using:
 - ✅ Registration (Day 1)
 - ✅ Login (Day 2)
 - ✅ Profile Page (Day 3)
-- ⏳ Forgot Password (Coming Day 4)
+- ✅ Forgot Password (Day 4)
 
 ## Setup
 
@@ -74,3 +74,24 @@ Server runs on: http://localhost:3000
 - Added redirectIfAuth middleware to prevent logged-in users from accessing login/register
 - All database queries use prepared statements
 - Proper error handling and session validation
+
+## Day 4 Progress
+
+- Created forgot password page (forgot.ejs) with:
+  - Email input field
+  - Professional gradient design matching login/register
+  - Success and error message display
+  - Link back to login page
+- Created reset password page (reset.ejs) with:
+  - New password and confirm password fields
+  - Password validation (minimum 6 characters)
+  - Error message display for mismatched passwords
+- Implemented forgot password routes:
+  - GET /forgot - Renders forgot password page
+  - POST /forgot - Validates email exists and redirects to reset page
+  - GET /reset/:id - Renders reset password page for specific user
+  - POST /reset/:id - Updates password with bcrypt hashing
+- Added "Forgot Password?" link to login page
+- All routes use prepared statements for security
+- Proper error handling throughout the flow
+- Password reset validates match and minimum length before updating
