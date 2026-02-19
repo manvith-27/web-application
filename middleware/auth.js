@@ -1,5 +1,5 @@
 // Middleware to check if user is authenticated
-const requireAuth = (req, res, next) => {
+const isAuthenticated = (req, res, next) => {
   if (!req.session.userId) {
     return res.redirect('/login');
   }
@@ -14,4 +14,4 @@ const redirectIfAuth = (req, res, next) => {
   next();
 };
 
-module.exports = { requireAuth, redirectIfAuth };
+module.exports = { isAuthenticated, redirectIfAuth };

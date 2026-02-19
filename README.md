@@ -10,7 +10,7 @@ A 4-page authentication system built using:
 
 - ✅ Registration (Day 1)
 - ✅ Login (Day 2)
-- ⏳ Profile Page (Coming Day 3)
+- ✅ Profile Page (Day 3)
 - ⏳ Forgot Password (Coming Day 4)
 
 ## Setup
@@ -52,10 +52,25 @@ Server runs on: http://localhost:3000
 
 - Created login page with email and password fields
 - Implemented POST /login route with proper validation
-- Added bcrypt password comparison for secure authentication
 - Integrated express-session for session management
 - Created session storage for user data (id, name, email)
 - Added logout functionality
 - Implemented basic profile page (temporary)
 - Added authentication middleware for protected routes
 - Proper error handling for "User not found" and "Invalid credentials"
+
+## Day 3 Progress
+
+- Created professional profile page (profile.ejs) with:
+  - User avatar with first letter of name
+  - Welcome message and user information display
+  - Beautiful gradient design
+  - Member since date
+  - Logout button
+- Implemented isAuthenticated middleware for route protection
+- Created dedicated profile routes (routes/profile.js)
+- GET /profile - Protected route that fetches user data from database
+- GET /logout - Destroys session and redirects to login
+- Added redirectIfAuth middleware to prevent logged-in users from accessing login/register
+- All database queries use prepared statements
+- Proper error handling and session validation

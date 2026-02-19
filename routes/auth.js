@@ -1,11 +1,12 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
 const db = require('../config/db');
+const { redirectIfAuth } = require('../middleware/auth');
 
 const router = express.Router();
 
 // Registration routes
-router.get('/register', (req, res) => {
+router.get('/register', redirectIfAuth, (req, res) => {
   res.render('register', { error: null });
 });
 
@@ -34,7 +35,7 @@ router.post('/register', async (req, res) => {
 });
 
 // Login routes
-router.get('/login', (req, res) => {
+router.get('/login', redirectIfAuth, (req, res) => {
   res.render('login', { error: null });
 });
 
